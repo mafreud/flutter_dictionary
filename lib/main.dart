@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dictionary/top_page.dart';
+import 'package:flutter_dictionary/widgets/scaffold/scaffold_top_page.dart';
+import 'package:flutter_dictionary/widgets/scaffold/scaffold_with_app_bar_page.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -14,6 +16,14 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (context, state) => const TopPage(),
+      ),
+      GoRoute(
+        path: '/scaffoldTop',
+        builder: (context, state) => const ScaffoldTopPage(),
+      ),
+      GoRoute(
+        path: '/scaffoldWithAppBar',
+        builder: (context, state) => const ScaffoldWithAppBar(),
       ),
     ],
   );
