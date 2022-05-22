@@ -8,7 +8,7 @@ class ScaffoldWithAppBar extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent[700],
-        title: const Text('This is an appBar'),
+        title: const Text('AppBar'),
       ),
     );
   }

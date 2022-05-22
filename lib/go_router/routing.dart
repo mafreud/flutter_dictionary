@@ -1,10 +1,15 @@
+import 'package:flutter_dictionary/widgets/scaffold/scaffold_background_color.dart';
+import 'package:flutter_dictionary/widgets/scaffold/scaffold_body.dart';
 import 'package:go_router/go_router.dart';
 
 import '../top_page.dart';
 import '../widgets/scaffold/scaffold_top_page.dart';
 import '../widgets/scaffold/scaffold_with_app_bar_page.dart';
 
-enum AppRouter { root, scaffoldTopPage, scaffoldWithAppBar }
+enum AppRouter {
+  root,
+}
+enum ScaffoldRouter { top, appBar, backgroundColor, body }
 
 final router = GoRouter(
   routes: [
@@ -15,13 +20,23 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/scaffoldTop',
-      name: AppRouter.scaffoldTopPage.name,
+      name: ScaffoldRouter.top.name,
       builder: (context, state) => const ScaffoldTopPage(),
       routes: [
         GoRoute(
-          path: 'scaffoldWithAppBar',
-          name: AppRouter.scaffoldWithAppBar.name,
+          path: 'appBar',
+          name: ScaffoldRouter.appBar.name,
           builder: (context, state) => const ScaffoldWithAppBar(),
+        ),
+        GoRoute(
+          path: 'backgroundColor',
+          name: ScaffoldRouter.backgroundColor.name,
+          builder: (context, state) => const ScaffoldBackgroundColor(),
+        ),
+        GoRoute(
+          path: 'body',
+          name: ScaffoldRouter.body.name,
+          builder: (context, state) => const ScaffoldBody(),
         ),
       ],
     ),

@@ -13,18 +13,40 @@ class ScaffoldTopPage extends StatelessWidget {
         title: const Text('Scaffold Top Page'),
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ElevatedButton(
-            style:
-                ElevatedButton.styleFrom(primary: Colors.deepPurpleAccent[700]),
-            onPressed: () =>
-                context.pushNamed(AppRouter.scaffoldWithAppBar.name),
-            child: const Text('AppBar'),
-          ),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () => context.pushNamed(ScaffoldRouter.appBar.name),
+                child: const Text('appBar'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () =>
+                    context.pushNamed(ScaffoldRouter.backgroundColor.name),
+                child: const Text('backgroundColor'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () => context.pushNamed(ScaffoldRouter.body.name),
+                child: const Text('body'),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

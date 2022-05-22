@@ -17,7 +17,7 @@ class TopPage extends StatelessWidget {
           ElevatedButton(
             style:
                 ElevatedButton.styleFrom(primary: Colors.deepPurpleAccent[700]),
-            onPressed: () => context.pushNamed(AppRouter.scaffoldTopPage.name),
+            onPressed: () => context.pushNamed(ScaffoldRouter.top.name),
             child: const Text('Scaffold'),
           )
         ]),
