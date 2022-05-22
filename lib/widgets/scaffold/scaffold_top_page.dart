@@ -12,9 +12,10 @@ class ScaffoldTopPage extends StatelessWidget {
       ),
       body: Center(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: () => context.go('/scaffoldWithAppBar'),
+            onPressed: () => context.push('/scaffoldWithAppBar'),
             child: const Text('AppBar'),
           )
         ],
