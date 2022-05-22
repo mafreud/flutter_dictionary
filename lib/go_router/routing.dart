@@ -17,11 +17,13 @@ final router = GoRouter(
       path: '/scaffoldTop',
       name: AppRouter.scaffoldTopPage.name,
       builder: (context, state) => const ScaffoldTopPage(),
-    ),
-    GoRoute(
-      path: '/scaffoldWithAppBar',
-      name: AppRouter.scaffoldWithAppBar.name,
-      builder: (context, state) => const ScaffoldWithAppBar(),
+      routes: [
+        GoRoute(
+          path: 'scaffoldWithAppBar',
+          name: AppRouter.scaffoldWithAppBar.name,
+          builder: (context, state) => const ScaffoldWithAppBar(),
+        ),
+      ],
     ),
   ],
 );

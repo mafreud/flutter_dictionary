@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,
       title: 'Flutter Dictionary',
