@@ -64,6 +64,15 @@ class ScaffoldTopPage extends StatelessWidget {
                 child: Text(ScaffoldRouter.bottomSheet.name),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () => context.pushNamed(ScaffoldRouter.drawer.name),
+                child: Text(ScaffoldRouter.drawer.name),
+              ),
+            ),
           ],
         ),
       ),
