@@ -1,5 +1,6 @@
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_background_color.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_body.dart';
+import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_bar.dart';
 import 'package:go_router/go_router.dart';
 
 import '../top_page.dart';
@@ -9,7 +10,8 @@ import '../widgets/scaffold/scaffold_with_app_bar_page.dart';
 enum AppRouter {
   root,
 }
-enum ScaffoldRouter { top, appBar, backgroundColor, body }
+
+enum ScaffoldRouter { top, appBar, backgroundColor, body, bottomNavigationBar }
 
 final router = GoRouter(
   routes: [
@@ -37,6 +39,11 @@ final router = GoRouter(
           path: 'body',
           name: ScaffoldRouter.body.name,
           builder: (context, state) => const ScaffoldBody(),
+        ),
+        GoRoute(
+          path: 'bottomNavigationBar',
+          name: ScaffoldRouter.bottomNavigationBar.name,
+          builder: (context, state) => const ScaffoldBottomNavigationBar(),
         ),
       ],
     ),

@@ -41,7 +41,7 @@ class _ScaffoldBackgroundColorState extends State<ScaffoldBackgroundColor> {
                 onPressed: () {
                   context.pop();
                 },
-                child: const Text('back'),
+                child: const Icon(Icons.arrow_back),
               ),
             ),
           ],
