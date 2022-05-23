@@ -20,6 +20,7 @@ class ScaffoldTopPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
                     primary: Colors.deepPurpleAccent[700]),
                 onPressed: () => context.pushNamed(ScaffoldRouter.appBar.name),
                 child: const Text('appBar'),
@@ -29,6 +30,7 @@ class ScaffoldTopPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
                     primary: Colors.deepPurpleAccent[700]),
                 onPressed: () =>
                     context.pushNamed(ScaffoldRouter.backgroundColor.name),
@@ -39,6 +41,7 @@ class ScaffoldTopPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
                     primary: Colors.deepPurpleAccent[700]),
                 onPressed: () => context.pushNamed(ScaffoldRouter.body.name),
                 child: const Text('body'),
@@ -48,6 +51,7 @@ class ScaffoldTopPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
                     primary: Colors.deepPurpleAccent[700]),
                 onPressed: () =>
                     context.pushNamed(ScaffoldRouter.bottomNavigationBar.name),
@@ -58,6 +62,7 @@ class ScaffoldTopPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
                     primary: Colors.deepPurpleAccent[700]),
                 onPressed: () =>
                     context.pushNamed(ScaffoldRouter.bottomSheet.name),
@@ -68,9 +73,21 @@ class ScaffoldTopPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
                     primary: Colors.deepPurpleAccent[700]),
                 onPressed: () => context.pushNamed(ScaffoldRouter.drawer.name),
                 child: Text(ScaffoldRouter.drawer.name),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () => context
+                    .pushNamed(ScaffoldRouter.drawerDragStartBehavior.name),
+                child: Text(ScaffoldRouter.drawerDragStartBehavior.name),
               ),
             ),
           ],

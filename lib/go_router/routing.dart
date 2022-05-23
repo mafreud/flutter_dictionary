@@ -20,7 +20,8 @@ enum ScaffoldRouter {
   body,
   bottomNavigationBar,
   bottomSheet,
-  drawer
+  drawer,
+  drawerDragStartBehavior,
 }
 
 final router = GoRouter(
@@ -63,6 +64,11 @@ final router = GoRouter(
         GoRoute(
           path: 'drawer',
           name: ScaffoldRouter.drawer.name,
+          builder: (context, state) => const ScaffoldDrawer(),
+        ),
+        GoRoute(
+          path: 'drawerDragStartBehavior',
+          name: ScaffoldRouter.drawerDragStartBehavior.name,
           builder: (context, state) => const ScaffoldDrawer(),
         ),
       ],
