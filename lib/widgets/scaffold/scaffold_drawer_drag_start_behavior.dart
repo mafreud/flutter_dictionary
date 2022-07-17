@@ -8,7 +8,7 @@ class ScaffoldDrawerDragStartBehavior extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.deepPurpleAccent[700]),
-      drawerDragStartBehavior: DragStartBehavior.down,
+      drawerDragStartBehavior: DragStartBehavior.start,
       body: Center(
         child: ElevatedButton(
           style:
