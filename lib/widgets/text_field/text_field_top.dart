@@ -38,6 +38,17 @@ class TextFieldTopPage extends StatelessWidget {
                 child: const Text('autofocus'),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(200, 25),
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () =>
+                    context.pushNamed(TextFieldRouter.focusNode.name),
+                child: const Text('focus node'),
+              ),
+            ),
           ],
         ),
       ),

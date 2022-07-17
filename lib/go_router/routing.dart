@@ -4,6 +4,7 @@ import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_b
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_drawer.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_autofocus.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_focus_node.dart';
 import 'package:go_router/go_router.dart';
 
 import '../top_page.dart';
@@ -27,11 +28,7 @@ enum ScaffoldRouter {
   drawerDragStartBehavior,
 }
 
-enum TextFieldRouter {
-  textFieldTop,
-  textField,
-  autofocus,
-}
+enum TextFieldRouter { textFieldTop, textField, autofocus, focusNode }
 
 final router = GoRouter(
   routes: [
@@ -96,6 +93,11 @@ final router = GoRouter(
           path: 'autofocus',
           name: TextFieldRouter.autofocus.name,
           builder: (context, state) => const TextFieldWithAutofocusPage(),
+        ),
+        GoRoute(
+          path: 'focusNode',
+          name: TextFieldRouter.focusNode.name,
+          builder: (context, state) => const TextFieldWithFocusNodePage(),
         ),
       ],
     ),
