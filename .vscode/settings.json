@@ -3,6 +3,11 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": true,
     },
-    "cSpell.enabledLanguageIds": ["dart"],
+    "cSpell.enabledLanguageIds": [
+      "dart"
+    ],
+    "cSpell.words": [
+      "autofocus"
+    ],
 }
   

@@ -2,12 +2,15 @@ import 'package:flutter_dictionary/widgets/scaffold/scaffold_background_color.da
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_body.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_bar.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_drawer.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_autofocus.dart';
 import 'package:go_router/go_router.dart';
 
 import '../top_page.dart';
 import '../widgets/scaffold/scaffold_bottom_sheet.dart';
 import '../widgets/scaffold/scaffold_top_page.dart';
 import '../widgets/scaffold/scaffold_with_app_bar_page.dart';
+import '../widgets/text_field/text_field_top.dart';
 
 enum AppRouter {
   root,
@@ -22,6 +25,12 @@ enum ScaffoldRouter {
   bottomSheet,
   drawer,
   drawerDragStartBehavior,
+}
+
+enum TextFieldRouter {
+  textFieldTop,
+  textField,
+  autofocus,
 }
 
 final router = GoRouter(
@@ -70,6 +79,23 @@ final router = GoRouter(
           path: 'drawerDragStartBehavior',
           name: ScaffoldRouter.drawerDragStartBehavior.name,
           builder: (context, state) => const ScaffoldDrawer(),
+        ),
+      ],
+    ),
+    GoRoute(
+      path: '/textFieldTop',
+      name: TextFieldRouter.textFieldTop.name,
+      builder: (context, state) => const TextFieldTopPage(),
+      routes: [
+        GoRoute(
+          path: 'textField',
+          name: TextFieldRouter.textField.name,
+          builder: (context, state) => const TextFieldPage(),
+        ),
+        GoRoute(
+          path: 'autofocus',
+          name: TextFieldRouter.autofocus.name,
+          builder: (context, state) => const TextFieldWithAutofocusPage(),
         ),
       ],
     ),

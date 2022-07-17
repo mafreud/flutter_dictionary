@@ -17,24 +17,15 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -42,7 +33,35 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAm0vORRRNM4hAoTdC8j70Pza774qkK8Fc',
+    appId: '1:348649885712:web:8b2eb1b54bbe9841fc7a95',
+    messagingSenderId: '348649885712',
+    projectId: 'flutter-dictionary-release',
+    authDomain: 'flutter-dictionary-release.firebaseapp.com',
+    storageBucket: 'flutter-dictionary-release.appspot.com',
+    measurementId: 'G-5G0V1WY151',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyAG4wt5GyR6RMis_fbZTpT5CN7IZXJxCuE',
+    appId: '1:348649885712:android:c752c8ca18ed9368fc7a95',
+    messagingSenderId: '348649885712',
+    projectId: 'flutter-dictionary-release',
+    storageBucket: 'flutter-dictionary-release.appspot.com',
+  );
+
   static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDK22nogGT5K3DamE-wNh3SS2lgUvtztfM',
+    appId: '1:348649885712:ios:7c8df03c2bde9aa5fc7a95',
+    messagingSenderId: '348649885712',
+    projectId: 'flutter-dictionary-release',
+    storageBucket: 'flutter-dictionary-release.appspot.com',
+    iosClientId: '348649885712-204kjpjm4s7pjae656dqgnkpd81gc2a2.apps.googleusercontent.com',
+    iosBundleId: 'com.flutterDictionary.release',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDK22nogGT5K3DamE-wNh3SS2lgUvtztfM',
     appId: '1:348649885712:ios:7c8df03c2bde9aa5fc7a95',
     messagingSenderId: '348649885712',

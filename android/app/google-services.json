@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "348649885712",
+    "project_id": "flutter-dictionary-release",
+    "storage_bucket": "flutter-dictionary-release.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348649885712:android:c752c8ca18ed9368fc7a95",
+        "android_client_info": {
+          "package_name": "com.flutterDictionary.release"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348649885712-dq11oa5bvj1va3n6o99d6ffb2m6igf2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAG4wt5GyR6RMis_fbZTpT5CN7IZXJxCuE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348649885712-dq11oa5bvj1va3n6o99d6ffb2m6igf2u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "348649885712-204kjpjm4s7pjae656dqgnkpd81gc2a2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterDictionary.release"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

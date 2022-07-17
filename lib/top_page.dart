@@ -14,12 +14,27 @@ class TopPage extends StatelessWidget {
       ),
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          ElevatedButton(
-            style:
-                ElevatedButton.styleFrom(primary: Colors.deepPurpleAccent[700]),
-            onPressed: () => context.pushNamed(ScaffoldRouter.top.name),
-            child: const Text('Scaffold'),
-          )
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(200, 25),
+                  primary: Colors.deepPurpleAccent[700]),
+              onPressed: () => context.pushNamed(ScaffoldRouter.top.name),
+              child: const Text('Scaffold'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(200, 25),
+                  primary: Colors.deepPurpleAccent[700]),
+              onPressed: () =>
+                  context.pushNamed(TextFieldRouter.textFieldTop.name),
+              child: const Text('TextField'),
+            ),
+          ),
         ]),
       ),
     );
