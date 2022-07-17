@@ -12,6 +12,7 @@ class _TextFieldWithFocusNodePageState
     extends State<TextFieldWithFocusNodePage> {
   FocusNode nodeOne = FocusNode();
   FocusNode nodeTwo = FocusNode();
+  FocusNode nodeThree = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,9 @@ class _TextFieldWithFocusNodePageState
               ),
               TextField(
                 focusNode: nodeTwo,
+              ),
+              TextField(
+                focusNode: nodeThree,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
