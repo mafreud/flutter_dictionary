@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dictionary/go_router/routing.dart';
+import 'package:flutter_dictionary/utilities/custom_colors.dart';
 import 'package:go_router/go_router.dart';
 
 class TextFieldTopPage extends StatelessWidget {
@@ -9,48 +10,56 @@ class TextFieldTopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurpleAccent[700],
+        backgroundColor: deepAccentPurple,
         title: const Text('TEXT FIELD TOP PAGE'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(200, 25),
-                    primary: Colors.deepPurpleAccent[700]),
-                onPressed: () =>
-                    context.pushNamed(TextFieldRouter.textField.name),
-                child: const Text('textField'),
-              ),
+            _Button(
+              type: TextFieldRouter.textField.name,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(200, 25),
-                    primary: Colors.deepPurpleAccent[700]),
-                onPressed: () =>
-                    context.pushNamed(TextFieldRouter.autofocus.name),
-                child: const Text('autofocus'),
-              ),
+            _Button(
+              type: TextFieldRouter.autofocus.name,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(200, 25),
-                    primary: Colors.deepPurpleAccent[700]),
-                onPressed: () =>
-                    context.pushNamed(TextFieldRouter.focusNode.name),
-                child: const Text('focus node'),
-              ),
+            _Button(
+              type: TextFieldRouter.focusNode.name,
+            ),
+            _Button(
+              type: TextFieldRouter.textInputType.name,
+            ),
+            _Button(
+              type: TextFieldRouter.onChanged.name,
+            ),
+            _Button(
+              type: TextFieldRouter.onEditingComplete.name,
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _Button extends StatelessWidget {
+  const _Button({
+    required this.type,
+    Key? key,
+  }) : super(key: key);
+
+  final String type;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            fixedSize: const Size(200, 25),
+            primary: Colors.deepPurpleAccent[700]),
+        onPressed: () => context.pushNamed(type),
+        child: Text(type),
       ),
     );
   }

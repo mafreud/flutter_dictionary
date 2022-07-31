@@ -16,33 +16,34 @@ class _TextFieldWithFocusNodePageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.deepPurpleAccent[700],
-          title: const Text('Text Field with focus node'),
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurpleAccent[700],
+        title: const Text('Text Field with focus node'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              focusNode: nodeOne,
+            ),
+            TextField(
+              focusNode: nodeTwo,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent[700]),
+                onPressed: () {
+                  FocusScope.of(context).requestFocus(nodeTwo);
+                },
+                child: const Text("Next Field"),
+              ),
+            ),
+          ],
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextField(
-                focusNode: nodeOne,
-              ),
-              TextField(
-                focusNode: nodeTwo,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.deepPurpleAccent[700]),
-                  onPressed: () {
-                    FocusScope.of(context).requestFocus(nodeTwo);
-                  },
-                  child: const Text("Next Field"),
-                ),
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }

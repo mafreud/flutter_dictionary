@@ -5,6 +5,9 @@ import 'package:flutter_dictionary/widgets/scaffold/scaffold_drawer.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_autofocus.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_focus_node.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_on_changed.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_on_editing_complete.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_text_input_type.dart';
 import 'package:go_router/go_router.dart';
 
 import '../top_page.dart';
@@ -28,7 +31,15 @@ enum ScaffoldRouter {
   drawerDragStartBehavior,
 }
 
-enum TextFieldRouter { textFieldTop, textField, autofocus, focusNode }
+enum TextFieldRouter {
+  textFieldTop,
+  textField,
+  autofocus,
+  focusNode,
+  textInputType,
+  onChanged,
+  onEditingComplete,
+}
 
 final router = GoRouter(
   routes: [
@@ -98,6 +109,21 @@ final router = GoRouter(
           path: 'focusNode',
           name: TextFieldRouter.focusNode.name,
           builder: (context, state) => const TextFieldWithFocusNodePage(),
+        ),
+        GoRoute(
+          path: 'textInputType',
+          name: TextFieldRouter.textInputType.name,
+          builder: (context, state) => const TextFieldTextInputType(),
+        ),
+        GoRoute(
+          path: 'onChanged',
+          name: TextFieldRouter.onChanged.name,
+          builder: (context, state) => const TextFieldWithOnChanged(),
+        ),
+        GoRoute(
+          path: 'onEditingComplete',
+          name: TextFieldRouter.onEditingComplete.name,
+          builder: (context, state) => const TextFieldWithOnEditingComplete(),
         ),
       ],
     ),
