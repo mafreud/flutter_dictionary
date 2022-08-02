@@ -10,6 +10,8 @@ class TextFieldWithOnEditingComplete extends StatefulWidget {
 
 class _TextFieldWithOnEditingCompleteState
     extends State<TextFieldWithOnEditingComplete> {
+  final TextEditingController _textEditingController = TextEditingController();
+  bool _complete = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +19,29 @@ class _TextFieldWithOnEditingCompleteState
         backgroundColor: Colors.deepPurpleAccent[700],
         title: const Text('Text Field with onEditingComplete'),
       ),
-      body: const TextField(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: TextField(
+              cursorColor: Colors.deepPurpleAccent[700],
+              decoration: InputDecoration(
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.deepPurpleAccent[700]!),
+                ),
+              ),
+              controller: _textEditingController,
+              onEditingComplete: () {
+                setState(() {
+                  _complete = true;
+                });
+              },
+            ),
+          ),
+          Text('onEditingComplete: $_complete')
+        ],
+      ),
     );
   }
 }

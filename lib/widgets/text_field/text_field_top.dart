@@ -35,6 +35,9 @@ class TextFieldTopPage extends StatelessWidget {
             _Button(
               type: TextFieldRouter.onEditingComplete.name,
             ),
+            _Button(
+              type: TextFieldRouter.onSubmitted.name,
+            ),
           ],
         ),
       ),

@@ -14,6 +14,7 @@ import '../top_page.dart';
 import '../widgets/scaffold/scaffold_bottom_sheet.dart';
 import '../widgets/scaffold/scaffold_top_page.dart';
 import '../widgets/scaffold/scaffold_with_app_bar_page.dart';
+import '../widgets/text_field/text_field_on_submitted.dart';
 import '../widgets/text_field/text_field_top.dart';
 
 enum AppRouter {
@@ -39,6 +40,7 @@ enum TextFieldRouter {
   textInputType,
   onChanged,
   onEditingComplete,
+  onSubmitted
 }
 
 final router = GoRouter(
@@ -124,6 +126,11 @@ final router = GoRouter(
           path: 'onEditingComplete',
           name: TextFieldRouter.onEditingComplete.name,
           builder: (context, state) => const TextFieldWithOnEditingComplete(),
+        ),
+        GoRoute(
+          path: 'onSubmitted',
+          name: TextFieldRouter.onSubmitted.name,
+          builder: (context, state) => const TextFieldWithOnSubmitted(),
         ),
       ],
     ),
