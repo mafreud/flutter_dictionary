@@ -9,6 +9,7 @@ import 'package:flutter_dictionary/widgets/text_field/text_field_on_changed.dart
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_editing_complete.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_focus.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_tap.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_text_input_action.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_text_input_type.dart';
 import 'package:go_router/go_router.dart';
 
@@ -45,6 +46,7 @@ enum TextFieldRouter {
   onSubmitted,
   onTap,
   focus,
+  textInputAction,
 }
 
 final router = GoRouter(
@@ -145,6 +147,11 @@ final router = GoRouter(
           path: TextFieldRouter.focus.name,
           name: TextFieldRouter.focus.name,
           builder: (context, state) => const TextFieldWithOnFocus(),
+        ),
+        GoRoute(
+          path: TextFieldRouter.textInputAction.name,
+          name: TextFieldRouter.textInputAction.name,
+          builder: (context, state) => const TextFieldTextInputAction(),
         ),
       ],
     ),
