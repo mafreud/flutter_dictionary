@@ -16,6 +16,9 @@ class TextFieldTextInputType extends StatelessWidget {
           child: Column(
             children: [
               const TextField(
+                decoration: InputDecoration(hintText: 'default'),
+              ),
+              const TextField(
                 keyboardType: TextInputType.none,
                 decoration: InputDecoration(hintText: 'none'),
               ),

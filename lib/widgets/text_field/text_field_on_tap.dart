@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class TextFieldWithOnSubmitted extends StatefulWidget {
-  const TextFieldWithOnSubmitted({Key? key}) : super(key: key);
+class TextFieldWithOnTap extends StatefulWidget {
+  const TextFieldWithOnTap({Key? key}) : super(key: key);
 
   @override
-  State<TextFieldWithOnSubmitted> createState() =>
-      _TextFieldWithOnSubmittedState();
+  State<TextFieldWithOnTap> createState() => _TextFieldWithOnTapState();
 }
 
-class _TextFieldWithOnSubmittedState extends State<TextFieldWithOnSubmitted> {
+class _TextFieldWithOnTapState extends State<TextFieldWithOnTap> {
   final TextEditingController _firstTextEditingController =
       TextEditingController();
-
+  int _counter = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,15 +31,16 @@ class _TextFieldWithOnSubmittedState extends State<TextFieldWithOnSubmitted> {
                   borderSide: BorderSide(color: Colors.deepPurpleAccent[700]!),
                 ),
               ),
-              onSubmitted: (value) {
-                showDialog(
-                  context: context,
-                  builder: ((context) => AlertDialog(
-                      title: const Text('Result value...'),
-                      content: Text(value.toString()))),
-                );
+              onTap: () {
+                setState(() {
+                  _counter++;
+                });
               },
             ),
+            const SizedBox(
+              height: 30,
+            ),
+            Text('tapped: $_counter'),
           ],
         ),
       ),

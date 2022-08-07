@@ -10,8 +10,22 @@ class TextFieldWithFocusNodePage extends StatefulWidget {
 
 class _TextFieldWithFocusNodePageState
     extends State<TextFieldWithFocusNodePage> {
-  FocusNode nodeOne = FocusNode();
-  FocusNode nodeTwo = FocusNode();
+  late FocusNode focusOne;
+  late FocusNode focusTwo;
+
+  @override
+  void initState() {
+    focusOne = FocusNode();
+    focusTwo = FocusNode();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    focusOne.dispose();
+    focusTwo.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,27 +35,36 @@ class _TextFieldWithFocusNodePageState
         title: const Text('Text Field with focus node'),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              focusNode: nodeOne,
-            ),
-            TextField(
-              focusNode: nodeTwo,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.deepPurpleAccent[700]),
-                onPressed: () {
-                  FocusScope.of(context).requestFocus(nodeTwo);
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                focusNode: focusOne,
+                cursorColor: Colors.deepPurpleAccent[700],
+                decoration: InputDecoration(
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.deepPurpleAccent[700]!),
+                  ),
+                ),
+                onSubmitted: (_) {
+                  FocusScope.of(context).requestFocus(focusTwo);
                 },
-                child: const Text("Next Field"),
               ),
-            ),
-          ],
+              TextField(
+                focusNode: focusTwo,
+                cursorColor: Colors.deepPurpleAccent[700],
+                decoration: InputDecoration(
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.deepPurpleAccent[700]!),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -10,8 +10,14 @@ class TextFieldWithOnEditingComplete extends StatefulWidget {
 
 class _TextFieldWithOnEditingCompleteState
     extends State<TextFieldWithOnEditingComplete> {
-  final TextEditingController _textEditingController = TextEditingController();
-  bool _complete = false;
+  final firstFocusNode = FocusNode();
+  final secondFocusNode = FocusNode();
+
+  final TextEditingController _firstTextEditingController =
+      TextEditingController();
+  final TextEditingController _secondTextEditingController =
+      TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,28 +25,43 @@ class _TextFieldWithOnEditingCompleteState
         backgroundColor: Colors.deepPurpleAccent[700],
         title: const Text('Text Field with onEditingComplete'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              focusNode: firstFocusNode,
+              textInputAction: TextInputAction.done,
               cursorColor: Colors.deepPurpleAccent[700],
               decoration: InputDecoration(
+                hintText: 'done',
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.deepPurpleAccent[700]!),
                 ),
               ),
-              controller: _textEditingController,
+              controller: _firstTextEditingController,
               onEditingComplete: () {
-                setState(() {
-                  _complete = true;
-                });
+                firstFocusNode.unfocus();
               },
             ),
-          ),
-          Text('onEditingComplete: $_complete')
-        ],
+            TextField(
+              focusNode: secondFocusNode,
+              textInputAction: TextInputAction.continueAction,
+              cursorColor: Colors.deepPurpleAccent[700],
+              decoration: InputDecoration(
+                hintText: 'continue',
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.deepPurpleAccent[700]!),
+                ),
+              ),
+              controller: _secondTextEditingController,
+              onEditingComplete: () {
+                secondFocusNode.unfocus();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

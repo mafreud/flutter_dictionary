@@ -13,32 +13,40 @@ class TextFieldTopPage extends StatelessWidget {
         backgroundColor: deepAccentPurple,
         title: const Text('TEXT FIELD TOP PAGE'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _Button(
-              type: TextFieldRouter.textField.name,
-            ),
-            _Button(
-              type: TextFieldRouter.autofocus.name,
-            ),
-            _Button(
-              type: TextFieldRouter.focusNode.name,
-            ),
-            _Button(
-              type: TextFieldRouter.textInputType.name,
-            ),
-            _Button(
-              type: TextFieldRouter.onChanged.name,
-            ),
-            _Button(
-              type: TextFieldRouter.onEditingComplete.name,
-            ),
-            _Button(
-              type: TextFieldRouter.onSubmitted.name,
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _Button(
+                type: TextFieldRouter.textField.name,
+              ),
+              _Button(
+                type: TextFieldRouter.autofocus.name,
+              ),
+              _Button(
+                type: TextFieldRouter.focusNode.name,
+              ),
+              _Button(
+                type: TextFieldRouter.textInputType.name,
+              ),
+              _Button(
+                type: TextFieldRouter.onChanged.name,
+              ),
+              _Button(
+                type: TextFieldRouter.onEditingComplete.name,
+              ),
+              _Button(
+                type: TextFieldRouter.onSubmitted.name,
+              ),
+              _Button(
+                type: TextFieldRouter.onTap.name,
+              ),
+              _Button(
+                type: TextFieldRouter.focus.name,
+              ),
+            ],
+          ),
         ),
       ),
     );
