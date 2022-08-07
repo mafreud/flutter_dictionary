@@ -9,9 +9,11 @@ import 'package:flutter_dictionary/widgets/text_field/text_field_on_changed.dart
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_editing_complete.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_focus.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_tap.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_text_alignment.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_text_capitalization.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_text_input_action.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_text_input_type.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_text_style.dart';
 import 'package:go_router/go_router.dart';
 
 import '../top_page.dart';
@@ -48,7 +50,9 @@ enum TextFieldRouter {
   onTap,
   focus,
   textInputAction,
-  textCapitalization
+  textCapitalization,
+  textAlign,
+  textStyle,
 }
 
 final router = GoRouter(
@@ -159,6 +163,16 @@ final router = GoRouter(
           path: TextFieldRouter.textCapitalization.name,
           name: TextFieldRouter.textCapitalization.name,
           builder: (context, state) => const TextFieldTextCapitalization(),
+        ),
+        GoRoute(
+          path: TextFieldRouter.textAlign.name,
+          name: TextFieldRouter.textAlign.name,
+          builder: (context, state) => const TextFieldTextAlignment(),
+        ),
+        GoRoute(
+          path: TextFieldRouter.textStyle.name,
+          name: TextFieldRouter.textStyle.name,
+          builder: (context, state) => const TextFieldTextStyle(),
         ),
       ],
     ),
