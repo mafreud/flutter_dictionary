@@ -4,7 +4,10 @@ import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_b
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_drawer.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_autofocus.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_cursor.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_focus_node.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_input_decoration.dart';
+import 'package:flutter_dictionary/widgets/text_field/text_field_max_length.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_changed.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_editing_complete.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_on_focus.dart';
@@ -53,6 +56,9 @@ enum TextFieldRouter {
   textCapitalization,
   textAlign,
   textStyle,
+  cursor,
+  maxLength,
+  inputDecoration,
 }
 
 final router = GoRouter(
@@ -173,6 +179,21 @@ final router = GoRouter(
           path: TextFieldRouter.textStyle.name,
           name: TextFieldRouter.textStyle.name,
           builder: (context, state) => const TextFieldTextStyle(),
+        ),
+        GoRoute(
+          path: TextFieldRouter.cursor.name,
+          name: TextFieldRouter.cursor.name,
+          builder: (context, state) => const TextFieldCursor(),
+        ),
+        GoRoute(
+          path: TextFieldRouter.maxLength.name,
+          name: TextFieldRouter.maxLength.name,
+          builder: (context, state) => const TextFieldMaxLength(),
+        ),
+        GoRoute(
+          path: TextFieldRouter.inputDecoration.name,
+          name: TextFieldRouter.inputDecoration.name,
+          builder: (context, state) => const TextFieldInputDecoration(),
         ),
       ],
     ),

@@ -57,6 +57,15 @@ class TextFieldTopPage extends StatelessWidget {
               _Button(
                 type: TextFieldRouter.textStyle.name,
               ),
+              _Button(
+                type: TextFieldRouter.cursor.name,
+              ),
+              _Button(
+                type: TextFieldRouter.maxLength.name,
+              ),
+              _Button(
+                type: TextFieldRouter.inputDecoration.name,
+              ),
             ],
           ),
         ),
