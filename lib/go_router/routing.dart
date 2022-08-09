@@ -2,8 +2,8 @@ import 'package:flutter_dictionary/widgets/scaffold/scaffold_background_color.da
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_body.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_bar.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_drawer.dart';
-import 'package:flutter_dictionary/widgets/table_calendar/table_calendar_basics.dart';
-import 'package:flutter_dictionary/widgets/table_calendar/table_calendar_index.dart';
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_basics.dart';
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_index.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_autofocus.dart';
 import 'package:flutter_dictionary/widgets/text_field/text_field_cursor.dart';
@@ -25,7 +25,7 @@ import '../top_page.dart';
 import '../widgets/scaffold/scaffold_bottom_sheet.dart';
 import '../widgets/scaffold/scaffold_top_page.dart';
 import '../widgets/scaffold/scaffold_with_app_bar_page.dart';
-import '../widgets/table_calendar/table_calendar_router.dart';
+import '../src/features/table_calendar/table_calendar_router.dart';
 import '../widgets/text_field/text_field_on_submitted.dart';
 import '../widgets/text_field/text_field_top.dart';
 

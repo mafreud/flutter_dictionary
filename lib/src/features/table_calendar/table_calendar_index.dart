@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dictionary/widgets/table_calendar/table_calendar_router.dart';
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_router.dart';
 import 'package:go_router/go_router.dart';
 
 class TableCalenderIndex extends StatelessWidget {
