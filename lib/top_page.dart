@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dictionary/go_router/routing.dart';
+import 'package:flutter_dictionary/widgets/table_calendar/table_calendar_router.dart';
 import 'package:go_router/go_router.dart';
 
 class TopPage extends StatelessWidget {
@@ -33,6 +34,17 @@ class TopPage extends StatelessWidget {
               onPressed: () =>
                   context.pushNamed(TextFieldRouter.textFieldTop.name),
               child: const Text('TextField'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(200, 25),
+                  primary: Colors.deepPurpleAccent[700]),
+              onPressed: () =>
+                  context.pushNamed(TableCalendarRouter.tableCalendarTop.name),
+              child: const Text('TableCalendar'),
             ),
           ),
         ]),
