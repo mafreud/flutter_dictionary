@@ -16,7 +16,10 @@ class TableCalenderIndex extends StatelessWidget {
         child: Column(children: [
           _Button(
             type: TableCalendarRouter.tableCalendarBasics.name,
-          )
+          ),
+          _Button(
+            type: TableCalendarRouter.tableCalendarMoveFocus.name,
+          ),
         ]),
       ),
     );

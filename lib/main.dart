@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import 'firebase_options.dart';
 import 'go_router/routing.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,7 +12,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
