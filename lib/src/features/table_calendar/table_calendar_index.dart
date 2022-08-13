@@ -20,6 +20,9 @@ class TableCalenderIndex extends StatelessWidget {
           _Button(
             type: TableCalendarRouter.tableCalendarMoveFocus.name,
           ),
+          _Button(
+            type: TableCalendarRouter.tableCalendarFormat.name,
+          ),
         ]),
       ),
     );
