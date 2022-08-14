@@ -21,13 +21,9 @@ class _TableCalendarFormatState extends State<TableCalendarFormat> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if (index < CalendarFormat.values.length - 1) {
-            setState(() {
-              index++;
-            });
+            index++;
           } else {
-            setState(() {
-              index = 0;
-            });
+            index = 0;
           }
           setState(() {
             _calendarFormat = CalendarFormat.values[index];
@@ -40,11 +36,33 @@ class _TableCalendarFormatState extends State<TableCalendarFormat> {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: TableCalendar(
-          headerVisible: false,
+          headerVisible: true,
           firstDay: DateTime.utc(2010, 1, 1),
           lastDay: DateTime.utc(2030, 1, 1),
           focusedDay: _focusedDay,
           calendarFormat: _calendarFormat,
+          onFormatChanged: (format) async {
+            await showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  title: const Text('Calendar Format has been changed'),
+                  content: Text(format.name),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('ok'),
+                    ),
+                  ],
+                );
+              },
+            );
+            setState(() {
+              _calendarFormat = format;
+            });
+          },
         ),
       ),
     );

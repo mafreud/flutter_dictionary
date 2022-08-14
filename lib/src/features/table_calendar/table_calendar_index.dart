@@ -23,6 +23,9 @@ class TableCalenderIndex extends StatelessWidget {
           _Button(
             type: TableCalendarRouter.tableCalendarFormat.name,
           ),
+          _Button(
+            type: TableCalendarRouter.tableCalendarUpdateFocus.name,
+          ),
         ]),
       ),
     );
@@ -43,7 +46,7 @@ class _Button extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            fixedSize: const Size(200, 25),
+            fixedSize: const Size(220, 25),
             primary: Colors.deepPurpleAccent[700]),
         onPressed: () => context.pushNamed(type),
         child: Text(type),

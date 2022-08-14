@@ -1,5 +1,6 @@
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_format.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_move_focus.dart';
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_event.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_background_color.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_body.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_bar.dart';
@@ -221,6 +222,11 @@ final router = GoRouter(
           path: TableCalendarRouter.tableCalendarFormat.name,
           name: TableCalendarRouter.tableCalendarFormat.name,
           builder: (context, state) => const TableCalendarFormat(),
+        ),
+        GoRoute(
+          path: TableCalendarRouter.tableCalendarUpdateFocus.name,
+          name: TableCalendarRouter.tableCalendarUpdateFocus.name,
+          builder: (context, state) => const TableCalendarUpdateFocus(),
         ),
       ],
     )
