@@ -3,5 +3,5 @@ enum TableCalendarRouter {
   tableCalendarBasics,
   tableCalendarMoveFocus,
   tableCalendarFormat,
-  tableCalendarUpdateFocus,
+  tableCalendarEvent,
 }

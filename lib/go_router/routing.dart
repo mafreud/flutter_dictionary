@@ -224,8 +224,8 @@ final router = GoRouter(
           builder: (context, state) => const TableCalendarFormat(),
         ),
         GoRoute(
-          path: TableCalendarRouter.tableCalendarUpdateFocus.name,
-          name: TableCalendarRouter.tableCalendarUpdateFocus.name,
+          path: TableCalendarRouter.tableCalendarEvent.name,
+          name: TableCalendarRouter.tableCalendarEvent.name,
           builder: (context, state) => const TableCalendarUpdateFocus(),
         ),
       ],

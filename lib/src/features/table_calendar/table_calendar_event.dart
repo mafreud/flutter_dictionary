@@ -33,7 +33,7 @@ class _TableCalendarUpdateFocusState extends State<TableCalendarUpdateFocus> {
           onDaySelected: (selectedDay, focusedDay) {
             setState(() {
               _selectedDay = selectedDay;
-              _focusedDay = focusedDay; // update `_focusedDay` here as well
+              _focusedDay = focusedDay;
             });
           },
           eventLoader: (date) {
