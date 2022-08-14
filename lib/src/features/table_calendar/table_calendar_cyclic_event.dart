@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dictionary/src/common_widgets/custom_app_bar.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-final sampleMap = {
-  DateTime.utc(2022, 8, 3): ['hey', 'hay'],
-  DateTime.utc(2022, 8, 5): ['hey', 'hay']
-};
-
-class TableCalendarEvent extends StatefulWidget {
-  const TableCalendarEvent({Key? key}) : super(key: key);
+class TableCalendarCyclicEvent extends StatefulWidget {
+  const TableCalendarCyclicEvent({Key? key}) : super(key: key);
 
   @override
-  State<TableCalendarEvent> createState() => _TableCalendarEventState();
+  State<TableCalendarCyclicEvent> createState() =>
+      _TableCalendarCyclicEventState();
 }
 
-class _TableCalendarEventState extends State<TableCalendarEvent> {
+class _TableCalendarCyclicEventState extends State<TableCalendarCyclicEvent> {
   DateTime _focusedDay = DateTime.now();
   final CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime? _selectedDay;
@@ -22,7 +18,7 @@ class _TableCalendarEventState extends State<TableCalendarEvent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'event'),
+      appBar: const CustomAppBar(title: 'cyclic event'),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: TableCalendar(
@@ -40,8 +36,12 @@ class _TableCalendarEventState extends State<TableCalendarEvent> {
               _focusedDay = focusedDay;
             });
           },
-          eventLoader: (date) {
-            return sampleMap[date] ?? [];
+          eventLoader: (day) {
+            if (day.weekday == DateTime.monday) {
+              return [('cyclic event')];
+            }
+
+            return [];
           },
         ),
       ),

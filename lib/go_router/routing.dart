@@ -1,3 +1,4 @@
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_cyclic_event.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_format.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_move_focus.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_event.dart';
@@ -226,7 +227,12 @@ final router = GoRouter(
         GoRoute(
           path: TableCalendarRouter.tableCalendarEvent.name,
           name: TableCalendarRouter.tableCalendarEvent.name,
-          builder: (context, state) => const TableCalendarUpdateFocus(),
+          builder: (context, state) => const TableCalendarEvent(),
+        ),
+        GoRoute(
+          path: TableCalendarRouter.tableCalendarCyclicEvent.name,
+          name: TableCalendarRouter.tableCalendarCyclicEvent.name,
+          builder: (context, state) => const TableCalendarCyclicEvent(),
         ),
       ],
     )

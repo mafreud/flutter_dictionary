@@ -4,4 +4,5 @@ enum TableCalendarRouter {
   tableCalendarMoveFocus,
   tableCalendarFormat,
   tableCalendarEvent,
+  tableCalendarCyclicEvent,
 }
