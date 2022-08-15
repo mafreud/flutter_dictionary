@@ -39,8 +39,8 @@ class _TableCalendarRangeSelectionState
                   _selectedDay = selectedDay;
                   _focusedDay = focusedDay;
                   // TODO(Someone): uncomments below to select single day
-                  // _rangeStart = null;
-                  // _rangeEnd = null;
+                  _rangeStart = null;
+                  _rangeEnd = null;
                 });
               },
               onRangeSelected: (start, end, focusedDay) {
