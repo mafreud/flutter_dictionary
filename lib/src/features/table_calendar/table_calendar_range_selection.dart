@@ -16,7 +16,7 @@ class _TableCalendarRangeSelectionState
   DateTime? _selectedDay;
   DateTime? _rangeStart;
   DateTime? _rangeEnd;
-  RangeSelectionMode _rangeSelectionMode = RangeSelectionMode.toggledOn;
+  final RangeSelectionMode _rangeSelectionMode = RangeSelectionMode.toggledOn;
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +38,14 @@ class _TableCalendarRangeSelectionState
                 setState(() {
                   _selectedDay = selectedDay;
                   _focusedDay = focusedDay;
+                  _rangeStart = null;
+                  _rangeEnd = null;
                 });
               },
               onRangeSelected: (start, end, focusedDay) {
                 setState(() {
-                  _selectedDay = null;
-                  _focusedDay = focusedDay;
                   _rangeStart = start;
                   _rangeEnd = end;
-                  _rangeSelectionMode = RangeSelectionMode.toggledOn;
                 });
               },
               rangeSelectionMode: _rangeSelectionMode,
