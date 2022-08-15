@@ -3,6 +3,7 @@ import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_ev
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_format.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_move_focus.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_event.dart';
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_range_selection.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_background_color.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_body.dart';
 import 'package:flutter_dictionary/widgets/scaffold/scaffold_bottom_navigation_bar.dart';
@@ -239,6 +240,11 @@ final router = GoRouter(
           path: TableCalendarRouter.tableCalendarEventSelection.name,
           name: TableCalendarRouter.tableCalendarEventSelection.name,
           builder: (context, state) => const TableCalendarEventSelection(),
+        ),
+        GoRoute(
+          path: TableCalendarRouter.tableCalendarRangeSelection.name,
+          name: TableCalendarRouter.tableCalendarRangeSelection.name,
+          builder: (context, state) => const TableCalendarRangeSelection(),
         ),
       ],
     )
