@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dictionary/src/common_widgets/custom_app_bar.dart';
-import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_event.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+final sampleEvents = {
+  DateTime.utc(2022, 8, 3): ['firstEvent', 'secondEvent'],
+  DateTime.utc(2022, 8, 5): ['thirdEvent', 'fourthEvent']
+};
 
 class TableCalendarEventSelection extends StatefulWidget {
   const TableCalendarEventSelection({Key? key}) : super(key: key);
@@ -17,7 +21,7 @@ class _TableCalendarEventSelectionState
   final CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime? _selectedDay;
 
-  final List<String> _selectedEvents = [];
+  List<String> _selectedEvents = [];
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +44,11 @@ class _TableCalendarEventSelectionState
                 setState(() {
                   _selectedDay = selectedDay;
                   _focusedDay = focusedDay;
+                  _selectedEvents = sampleEvents[selectedDay] ?? [];
                 });
               },
               eventLoader: (date) {
-                return sampleMap[date] ?? [];
+                return sampleEvents[date] ?? [];
               },
             ),
           ),
@@ -51,7 +56,12 @@ class _TableCalendarEventSelectionState
             child: ListView.builder(
               itemCount: _selectedEvents.length,
               itemBuilder: (context, index) {
-                return const Text('test');
+                final event = _selectedEvents[index];
+                return Card(
+                  child: ListTile(
+                    title: Text(event),
+                  ),
+                );
               },
             ),
           ),
