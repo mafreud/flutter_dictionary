@@ -1,3 +1,4 @@
+import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_custom_builder.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_cyclic_event.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_event_selection.dart';
 import 'package:flutter_dictionary/src/features/table_calendar/table_calendar_format.dart';
@@ -251,6 +252,11 @@ final router = GoRouter(
           path: TableCalendarRouter.tableCalendarMultiSelection.name,
           name: TableCalendarRouter.tableCalendarMultiSelection.name,
           builder: (context, state) => const TableCalendarMultiSelection(),
+        ),
+        GoRoute(
+          path: TableCalendarRouter.tableCalendarCustomBuilder.name,
+          name: TableCalendarRouter.tableCalendarCustomBuilder.name,
+          builder: (context, state) => const TableCalendarCustomBuilder(),
         ),
       ],
     )

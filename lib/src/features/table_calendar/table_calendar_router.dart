@@ -7,5 +7,6 @@ enum TableCalendarRouter {
   tableCalendarCyclicEvent,
   tableCalendarEventSelection,
   tableCalendarRangeSelection,
-  tableCalendarMultiSelection
+  tableCalendarMultiSelection,
+  tableCalendarCustomBuilder,
 }

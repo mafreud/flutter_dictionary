@@ -38,6 +38,9 @@ class TableCalenderIndex extends StatelessWidget {
           _Button(
             type: TableCalendarRouter.tableCalendarMultiSelection.name,
           ),
+          _Button(
+            type: TableCalendarRouter.tableCalendarCustomBuilder.name,
+          ),
         ]),
       ),
     );
